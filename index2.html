@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+
+    <FORM action="/cgi-bin/sv2.py" >
+
+        <h1> Заполните форму регистрации участника конференции.<br></h1>
+
+        <h2> Введите фамилию, имя<br></h2>
+
+        <input type='text' name='fio' ><br>
+
+        <h2> Введите электронную почту<br></h2>
+
+        <input type='text' name='mail' ><br>
+
+        <h2> Укажите пол:<br></h2>
+
+        <input type="RADIO" CHECKED name="pol" value="Мужской"> Мужской
+
+        <input type="RADIO" name="pol" value="Женский"> Женский
+
+        <h2> Укажите образование:<br></h2>
+
+        <select name="edu" size="1">
+
+            <option selected value="Высшее">Высшее</option>
+
+            <option value="Незаконченное высшее">Незаконченное высшее</option>
+
+            <option value="Среднее полное">Среднее полное</option>
+
+            <option value="Без образования">Без образования</option></select>
+
+
+        <h2> Вы<br></h2>
+
+        <input type="RADIO" CHECKED name="dolgnost" value="Студент"> Студент
+
+        <input type="RADIO" name="dolgnost" value="Молодой ученый"> Молодой ученый
+        <h2> Название доклада<br></h2>
+
+        <textarea name='name' ></textarea><br>
+        <h2> Сборник тезисов:<br></h2>
+
+        <select name="doc" size="1">
+
+            <option selected value="печатный">печатный</option>
+
+            <option value="PDF">PDF</option></select>
+        <h2> Дистанционное участие<br></h2>
+
+            <input type="CHECKBOX" name="dis" checked value="ON">
+        <h2> Требуется общежитие<br></h2>
+
+            <input type="CHECKBOX" name="ob" checked value="ON">
+
+
+        <div align="left"><left><p>
+
+        <input type="submit" value="Отправить">
+
+        <input type="reset" value="Сброс"> <br> </p> </left></div>
+
+    </FORM>
+</body>

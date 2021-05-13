@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    H1 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #338366;
+    }
+    h2 {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #000080;
+    }
+
+</style>
+</head>
+<body>
+
+    <FORM action="/cgi-bin/z5f_1.py" >
+
+        <h1> Заполните данные о ноутбуке:<br></h1>
+
+        <h2> Производитель:<br></h2>
+
+        <input type='text' name='vendorn' ><br>
+
+        <h2> Название модели:<br></h2>
+
+        <input type='text' name='model_namen' ><br>
+
+        <h2> Количество ядер:<br></h2>
+
+        <input type='integer' name='cpu_coren' ><br>
+
+        <h2> Частота ядер:<br></h2>
+
+        <input type='integer' name='cpu_speedn' ><br>
+
+        <h2> Тип жесткого диска:<br></h2>
+
+        <select name="hdd_type" size="1">
+
+            <option selected value="hhd">hdd</option>
+
+            <option value="ssd">ssd</option></select>
+
+        <h2> Объем жесткого диска:<br></h2>
+
+        <input type='integer' name='hdd_sizen' ><br>
+
+        <h2> Размер экрана:<br></h2>
+
+        <input type='integer' name='screen_sizen' ><br>
+
+        <h2> Цена:<br></h2>
+
+        <input type='integer' name='prizen' ><br>
+
+        <div align="left"><left><p>
+
+        <input type="submit" value="Отправить">
+
+        <input type="reset" value="Сброс"> <br> </p> </left></div>
+
+    </FORM>
+</body>
+</html>

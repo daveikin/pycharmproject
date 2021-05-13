@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    H1 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #338366;
+    }
+    h3 {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #000080;
+    }
+</style>
+</head>
+<body>
+<form oninput="sr()" or action="/cgi-bin/t.py">
+    <span id="table">
+    <table border=0 cellspacing=0 cellpadding=3>
+    <h1> Заполните данные о студенте <br> </h1>
+
+    <tr><td><h3>Фамилию, имя, отчество</h3></td><td><h3>курс</h3></td><td><h3>физика</h3></td><td><h3>мат анализ</h3></td><td><h3>алгебра</h3></td><td><h3>механика</h3></td><td><h3>Средний балл</h3></td><td>
+    <a href="#" onclick="addline();">добавить</a></td></tr>
+    <tr id="newline" nomer="[0]">
+    <td><input type="text" name="name[0]"></td>
+        <td><input type="text" name="k[0]"></td>
+        <td><select name="F[0]"id="aa[0]" size="1">
+
+            <option selected value="5">5</option>
+
+            <option value="4">4</option>
+
+            <option value="3">3</option>
+
+            <option value="2">2</option></select></td>
+        <td><select name="M[0]"id="bb[0]" size="1">
+
+            <option selected value="5">5</option>
+
+            <option value="4">4</option>
+
+            <option value="3">3</option>
+
+            <option value="2">2</option></select></td>
+        <td><select name="A[0]"id="cc[0]" size="1">
+
+            <option selected value="5">5</option>
+
+            <option value="4">4</option>
+
+            <option value="3">3</option>
+
+            <option value="2">2</option></select></td>
+        <td><select name="Mx[0]"id="dd[0]" size="1">
+
+            <option selected value="5">5</option>
+
+            <option value="4">4</option>
+
+            <option value="3">3</option>
+
+            <option value="2">2</option></select></td>
+  <td><output name="result"id="gg[0]">5</output></td>
+
+    <td valign="top">
+        <!--<a href="#" onclick="rmline(0);">удалить</a>--></td></tr></table>
+</span>
+    <div align="left"><left><p>
+
+        <input type='button' onclick='window.location.reload()'  value ='Обновить' />
+
+        <input type="reset" value="Сброс">
+        <input type="submit" value="Перейти к лучшему студенту"></left> </p> </div>
+    <div id="myDiv"></div>
+</form>
+</body>
+</html>
+    <script>
+    var c=0; //счётчик количества строк
+    var f=[];
+    var m=[];
+    var a=[];
+    var mx=[];
+    function sr()
+    {
+        var string='<b>All Element of the Array :</b><br>';
+
+        for(i = 0; i < c+1; i++)
+        {
+            f[i]=document.getElementById('aa['+i+']').value;
+            m[i]=document.getElementById('bb['+i+']').value;
+            a[i]=document.getElementById('cc['+i+']').value;
+            mx[i]=document.getElementById('dd['+i+']').value;
+            document.getElementById('gg['+i+']').innerHTML = (parseInt(f[i])+parseInt(m[i])+parseInt(a[i])+parseInt(mx[i]))/4;
+        }
+
+        return false;
+    }
+    function addline()
+    {
+	    c++; // увеличиваем счётчик строк
+	    s=document.getElementById('table').innerHTML; // получаем HTML-код таблицы
+	    s=s.replace(/[\r\n]/g,''); // вырезаем все символы перевода строк
+	    re=/(.*)(<tr id=.*>)(<\/table>)/gi;
+                // это регулярное выражение позволяет выделить последнюю строку таблицы
+	    s1=s.replace(re,'$2'); // получаем HTML-код последней строки таблицы
+	    s2=s1.replace(/\[\d+\]/gi,'['+c+']'); // заменяем все цифры к квадратных скобках
+                // на номер новой строки
+	    s2=s2.replace(/(rmline\()(\d+\))/gi,'$1'+c+')');
+                // заменяем аргумент функции rmline на номер новой строки
+	    s=s.replace(re,'$1$2'+s2+'$3');
+                // создаём HTML-код с добавленным кодом новой строки
+	    document.getElementById('table').innerHTML=s;
+                // возвращаем результат на место исходной таблицы
+        sr()
+	    return false; // чтобы не происходил переход по ссылке
+    }
+    function rmline(q)
+    {
+                 if (c==0) return false; else c--;
+                // если раскомментировать предыдущую строчку, то последний (единственный)
+                // элемент удалить будет нельзя.
+	    s=document.getElementById('table').innerHTML;
+	    s=s.replace(/[\r\n]/g,'');
+	    re=new RegExp('<tr id="?newline"? nomer="?\\['+q+'.*?</tr>','gi');
+                // это регулярное выражение позволяет выделить строку таблицы с заданным номером
+	    s=s.replace(re,'');
+                // заменяем её на пустое место
+	    document.getElementById('table').innerHTML=s;
+	    sr()
+	    return false;
+    }
+</script>

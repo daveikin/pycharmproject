@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    H1 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #338366;
+    }
+    h2 {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #000080;
+    }
+
+</style>
+</head>
+<body>
+
+    <FORM action="/cgi-bin/z5f_1.py" >
+
+        <h1> Заполните данные о смартфоне:<br></h1>
+
+        <h2> Производитель:<br></h2>
+
+        <input type='text' name='vendorsm' ><br>
+
+        <h2> Название модели:<br></h2>
+
+        <input type='text' name='model_namesm' ><br>
+
+        <h2> Количество ядер:<br></h2>
+
+        <input type='integer' name='cpu_coresm' ><br>
+
+        <h2> Частота ядер:<br></h2>
+
+        <input type='integer' name='cpu_speedsm' ><br>
+
+        <h2> Объем памяти:<br></h2>
+
+        <input type='integer' name='flash_sizesm' ><br>
+
+        <h2> Операционнная система:<br></h2>
+
+        <input type='text' name='ossm' ><br>
+
+        <h2> LTE:<br></h2>
+
+        <select name="ltesm" size="1">
+
+            <option selected value="ON">Есть</option>
+
+            <option value="OFF">Нет</option></select>
+        <h2> Размер экрана:<br></h2>
+
+        <input type='integer' name='screen_sizesm' ><br>
+
+        <h2> Цена:<br></h2>
+
+        <input type='integer' name='prizesm' ><br>
+
+        <div align="left"><left><p>
+
+        <input type="submit" value="Отправить">
+
+        <input type="reset" value="Сброс"> <br> </p> </left></div>
+
+    </FORM>
+</body>
+</html>

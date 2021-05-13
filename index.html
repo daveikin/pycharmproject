@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <FORM action="/cgi-bin/sv.py" >
+
+        <h1> Заполните анкету:<br></h1>
+
+        <h2> Введите фамилию, имя:<br></h2>
+
+        <input type='text' name='fio' ><br>
+
+        <h3> Укажите пол:<br></h3>
+
+        <input type="RADIO" CHECKED name="pol" value="Мужской"> Мужской
+
+        <input type="RADIO" name="pol" value="Женский"> Женский
+
+        <h3> Укажите образование:<br></h3>
+
+        <select name="edu" size="1">
+
+            <option selected value="Высшее">Высшее</option>
+
+            <option value="Незаконченное высшее">Незаконченное высшее</option>
+
+            <option value="Среднее полное">Среднее полное</option></select>
+
+        <h3> Наличие авто:<br></h3>
+
+            <input type="CHECKBOX" name="avto" checked value="ON">
+
+        <div align="left"><left><p>
+
+        <input type="submit" value="Отправить">
+
+        <input type="reset" value="Сброс"> <br> </p> </left></div>
+
+    </FORM>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    H1 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #338366;
+    }
+    h2 {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #000080;
+    }
+
+</style>
+</head>
+<body>
+
+    <FORM action="/cgi-bin/z5f_1.py" >
+
+        <h1> Заполните данные о компьютере:<br></h1>
+
+        <h2> Производитель:<br></h2>
+
+        <input type='text' name='vendorpc' ><br>
+
+        <h2> Название модели:<br></h2>
+
+        <input type='text' name='model_namepc' ><br>
+
+        <h2> Количество ядер:<br></h2>
+
+        <input type='integer' name='cpu_corepc' ><br>
+
+        <h2> Частота ядер:<br></h2>
+
+        <input type='integer' name='cpu_speedpc' ><br>
+
+        <h2> Объем оперативной памяти:<br></h2>
+
+        <input type='integer' name='rampc' ><br>
+
+        <h2> Объем жесткого диска:<br></h2>
+
+        <input type='integer' name='hdd_sizepc' ><br>
+
+        <h2> Цена:<br></h2>
+
+        <input type='integer' name='prizepc' ><br>
+
+        <div align="left"><left><p>
+
+        <input type="submit" value="Отправить">
+
+        <input type="reset" value="Сброс"> <br> </p> </left></div>
+
+    </FORM>
+</body>
+</html>

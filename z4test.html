@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    H1 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #338366;
+    }
+    h3 {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #000080;
+    }
+</style>
+</head>
+<body>
+<form action="/cgi-bin/t.py">
+    <span id="table">
+    <table border=0 cellspacing=0 cellpadding=3>
+    <h1> Заполните данные о студенте <br> </h1>
+
+    <a href="#" onclick="addline();">добавить</a></td></tr>
+    <tr id="newline" nomer="[0]">
+    <td><input type="text" name="name[0]"></td>
+
+
+
+    <td valign="top">
+        </td></tr></table>
+</span>
+    <div align="left"><left><p>
+
+
+        <input type="submit" value="Перейти к лучшему студенту"></left> </p> </div>
+    <div id="myDiv"></div>
+</form>
+</body>
+</html>
+    <script>
+    var c=0; //счётчик количества строк
+
+    function addline()
+    {
+	    c++; // увеличиваем счётчик строк
+	    s=document.getElementById('myDiv').innerHTML; // получаем HTML-код таблицы
+	    s=s.replace(/[\r\n]/g,''); // вырезаем все символы перевода строк
+	    re=/(.*)(<tr id=.*>)(<\/table>)/gi;
+                // это регулярное выражение позволяет выделить последнюю строку таблицы
+	    s1=s.replace(re,'$2'); // получаем HTML-код последней строки таблицы
+	    s2=s1.replace(/\[\d+\]/gi,'['+c+']'); // заменяем все цифры к квадратных скобках
+                // на номер новой строки
+	    s2=s2.replace(/(rmline\()(\d+\))/gi,'$1'+c+')');
+                // заменяем аргумент функции rmline на номер новой строки
+	    s=s.replace(re,'$1$2'+s2+'$3');
+                // создаём HTML-код с добавленным кодом новой строки
+	    document.getElementById('myDiv').innerHTML=s2;
+                // возвращаем результат на место исходной таблицы
+        sr()
+	    return false; // чтобы не происходил переход по ссылке
+    }
+
+</script>
